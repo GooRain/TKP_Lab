@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>BackGrid complete example</title>
+<link rel="stylesheet" href="css/backgrid-0.3.5.css">
+<link rel="stylesheet" href="css/backgrid-select-all.css">
+<link rel="stylesheet" href="css/backgrid-paginator.css">
+<link rel="stylesheet" href="css/backgrid-filter.css">
+</head>
+<body>
+<h1>BackGrid complete example with filters and paginator</h1>
+<div id="example-2-result" class="backgrid-container"></div>
+<script src="js/jquery-1.11.0.js"></script>
+<script src="js/underscore-1.6.0.js"></script>
+<script src="js/backbone-1.1.2.js"></script>
+<script src="js/backbone-pageable.js"></script>
+<script src="js/backgrid-0.3.5.js"></script>
+<script src="js/backgrid-select-all.js"></script>
+<script src="js/backgrid-paginator.js"></script>
+<script src="js/backgrid-filter.js"></script>
+<script>
+$(function() {
+
+var ExamResult = Backbone.Model.extend({});
+
+var data = [
+    {
+        "name": "Виктор Н.",
+        "subject": "Основы программирования",
+        "date": "2017-03-06",
+        "result": 5,
+        "id": 1
+    },
+    {
+        "name": "Геннадий Д.",
+        "subject": "Основы программирования",
+        "date": "2017-03-06",
+        "result": 2,
+        "id": 2
+    },
+    {
+        "name": "Айаал Г.",
+        "subject": "Основы программирования",
+        "date": "2017-03-06",
+        "result": 5,
+        "id": 3
+    }
+];
+
+var columns = [{
+    name: "id",
+    label: "ID",
+    editable: false,
+    cell: Backgrid.IntegerCell.extend({
+      orderSeparator: ''
+    })
+  }, {
+    name: "name",
+    label: "ФИО",
+    cell: "string"
+  }, {
+    name: "subject",
+    label: "Предмет",
+    cell: "string"
+  }, {
+    name: "date",
+    label: "Дата сдачи",
+    cell: "date"
+  }, {
+    name: "result",
+    label: "Оценка",
+    cell: "integer"
+  }
+];
+
+var PageableExamResults = Backbone.PageableCollection.extend({
+  model: ExamResult,
+  state: {
+    pageSize: 15
+  },
+  mode: "client" // page entirely on the client side
+});
+
+var pageableExamResults = new PageableExamResults(data);
+
+// Set up a grid to use the pageable collection
+var pageableGrid = new Backgrid.Grid({
+  columns: [{
+    // enable the select-all extension
+    name: "",
+    cell: "select-row",
+    headerCell: "select-all"
+  }].concat(columns),
+  collection: pageableExamResults
+});
+
+// Render the grid
+var $page = $("#example-2-result");
+$page.append(pageableGrid.render().el)
+
+// Initialize the paginator
+var paginator = new Backgrid.Extension.Paginator({
+  collection: pageableExamResults
+});
+
+// Render the paginator
+$page.after(paginator.render().el);
+
+// Initialize a client-side filter to filter on the client
+// mode pageable collection's cache.
+var filter = new Backgrid.Extension.ClientSideFilter({
+  collection: pageableExamResults,
+  fields: ['name']
+});
+
+// Render the filter
+$page.before(filter.render().el);
+
+// Add some space to the filter and move it to the right
+$(filter.el).css({float: "right", margin: "20px"});
+
+// Fetch some data
+// pageableExamResults.fetch({reset: true});
+
+});
+</script>
+</body>
+</html>
