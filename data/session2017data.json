@@ -1,3 +1,17 @@
-{
-	
-}
+[{
+  "name": "name",
+  "label": "ФИО",
+  "cell": "string"
+},{
+  "name": "subject",
+  "label": "Предмет",
+  "cell": "string"
+},{
+  "name": "date",
+  "label": "Дата сдачи",
+  "cell": "date"
+},{
+  "name": "result",
+  "label": "Оценка",
+  "cell": "integer"
+}];

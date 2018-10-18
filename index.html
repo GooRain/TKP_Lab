@@ -2,15 +2,15 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>BackGrid complete example</title>
+<title>Session results</title>
 <link rel="stylesheet" href="css/backgrid-0.3.5.css">
 <link rel="stylesheet" href="css/backgrid-select-all.css">
 <link rel="stylesheet" href="css/backgrid-paginator.css">
 <link rel="stylesheet" href="css/backgrid-filter.css">
 </head>
 <body>
-<h1>BackGrid complete example with filters and paginator</h1>
-<div id="example-2-result" class="backgrid-container"></div>
+<h1>Session 2017 results</h1>
+<div id="grid-result" class="backgrid-container"></div>
 <script src="js/jquery-1.11.0.js"></script>
 <script src="js/underscore-1.6.0.js"></script>
 <script src="js/backbone-1.1.2.js"></script>
@@ -73,6 +73,14 @@ var columns = [{
     cell: "integer"
   }
 ];
+
+//var ExamResultsList = Backbone.Collection.extend({
+//  model: ExamResult,
+//   url: '/data/session2017data.json'
+//});
+
+//var examResults = new ExamResultsList(); 
+//examResults.fetch();
 
 var PageableExamResults = Backbone.PageableCollection.extend({
   model: ExamResult,
