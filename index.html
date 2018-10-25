@@ -25,27 +25,510 @@ $(function() {
 var ExamResult = Backbone.Model.extend({});
 
 var data = [
-    {
-        "name": "Виктор Н.",
-        "subject": "Основы программирования",
-        "date": "2017-03-06",
-        "result": 5,
-        "id": 1
-    },
-    {
-        "name": "Геннадий Д.",
-        "subject": "Основы программирования",
-        "date": "2017-03-06",
-        "result": 2,
-        "id": 2
-    },
-    {
-        "name": "Айаал Г.",
-        "subject": "Основы программирования",
-        "date": "2017-03-06",
-        "result": 5,
-        "id": 3
-    }
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 3
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 3
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 3
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 5
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 5
+  }
 ];
 
 var columns = [{
@@ -62,18 +545,29 @@ var columns = [{
   }, {
     name: "subject",
     label: "Предмет",
-    cell: "string"
+    cell: Backgrid.SelectCell.extend({
+      optionValues: [["Основы программирования", "subject001"], 
+      ["Анализ данных", "subject002"], 
+      ["Технологии компонентного программирования", "subject003"], 
+      ["Основы JavaScript","subject004"], 
+      ["Физика", "subject005"],
+      ["Основы Python", "subject006"]]
+    })
   }, {
     name: "date",
     label: "Дата сдачи",
-    cell: "date"
+    cell: "string"
   }, {
-    name: "result",
+    name: "mark",
     label: "Оценка",
-    cell: "integer"
+    cell: Backgrid.SelectCell.extend({
+      optionValues: [["5", "5"], 
+      ["4", "4"], 
+      ["3", "3"], 
+      ["2", "2"]]
+    })
   }
 ];
-
 //var ExamResultsList = Backbone.Collection.extend({
 //  model: ExamResult,
 //   url: '/data/session2017data.json'
@@ -104,7 +598,7 @@ var pageableGrid = new Backgrid.Grid({
 });
 
 // Render the grid
-var $page = $("#example-2-result");
+var $page = $("#grid-result");
 $page.append(pageableGrid.render().el)
 
 // Initialize the paginator
