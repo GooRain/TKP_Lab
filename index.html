@@ -10,6 +10,11 @@
 </head>
 <body>
 <h1>Session 2017 results</h1>
+<div>
+  <button type="button" class="btn btn-outline-primary">
+    <a href="stats.html">Открыть диаграмму</a>
+    </button>
+</div>
 <div id="grid-result" class="backgrid-container"></div>
 <script src="js/jquery-1.11.0.js"></script>
 <script src="js/underscore-1.6.0.js"></script>
@@ -21,7 +26,6 @@
 <script src="js/backgrid-filter.js"></script>
 <script>
 $(function() {
-
 var ExamResult = Backbone.Model.extend({});
 
 var data = [

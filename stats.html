@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Session results</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script>
+var data = [
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Алексеев Семен Семенович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 5
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Аммосов Алексей Николаевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Анисимова Анастасия Ананьевна",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 3
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Антипин Георгий Прокопьевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Гаврильев Айаал Макарович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 3
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Добрецов Геннадий Геннадьевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Жирков Михаил Михайлович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Илларионов Денис Максимович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Ноговицын Виктор Робертович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипов Айсиэн Андреевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Осипова Саргылана Алексеевна",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 3
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Поротов Василий Николаевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 3
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Семенов Андрей Эдуардович",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject005",
+    "date": "27.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject002",
+    "date": "29.05.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject001",
+    "date": "01.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject003",
+    "date": "04.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject004",
+    "date": "07.06.2018",
+    "mark": 4
+  },
+  {
+    "name": "Хахыров Петр Анатольевич",
+    "subject": "subject006",
+    "date": "10.06.2018",
+    "mark": 4
+  }
+];
+
+results = [0, 0, 0, 0, 0, 0]
+for(var i in data) 
+{
+  switch (data[i]['mark']) 
+  {
+    case 1:
+        results[1]++;
+        break;
+    case 2:
+        results[2]++;
+        break;
+    case 3:
+        results[3]++;
+        break;
+    case 4:
+        results[4]++;
+        break;
+    case 5:
+        results[5]++;
+        break;
+    default:
+        break;
+    }  
+}
+
+</script>
+</head>
+<body>
+    <div style="padding:20px;">
+        <div style="width:400px; margin:auto;"><canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["1", "2", "3", "4", "5"],
+        datasets: [{
+            label: 'Количество оценок',
+            data: [results[1], results[2], results[3], results[4], results[5]],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        title: {
+            display: true,
+            text: 'Распределение оценок результатов летней сессии ФИИТ-15'
+        }
+    }
+});
+</script>
+</body>
+</html>
