@@ -1,0 +1,26 @@
+#notification {
+    position:fixed;
+    top:0px;
+    width:100%;
+    z-index:105;
+    text-align:center;
+    font-weight:normal;
+    font-size:14px;
+    font-weight:bold;
+    color:rgb(48, 39, 71);
+    background-color:rgba(224, 164, 156, 0.87);
+    padding:5px;
+    margin-right:5px;
+}
+#notification span.dismiss {
+    border:2px solid rgb(48, 39, 71);
+    padding:0 5px;
+    cursor:pointer;
+    float:right;
+    margin-right:20px;
+}
+#notification a {
+    color:rgb(48, 39, 71);
+    text-decoration:none;
+    font-weight:bold
+}
